@@ -10,7 +10,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Typography from "@material-ui/core/Typography";
 import Chip from "@material-ui/core/Chip";
 import Avatar from "@material-ui/core/Avatar";
-import { NfcTap } from "mdi-material-ui";
+import { Flare as AvatarIcon } from "mdi-material-ui";
 
 const Header = props => {
   return (
@@ -20,14 +20,14 @@ const Header = props => {
           container
           justify="space-between"
           alignItems="center"
-          spacing={16}
+          spacing={10}
         >
           <Grid item>
             <Chip
               id="logo"
               variant="outlined"
               avatar={<Avatar id="logoIcon">
-                <NfcTap />
+                <AvatarIcon />
               </Avatar>}
               label={
                 <Link to="/">

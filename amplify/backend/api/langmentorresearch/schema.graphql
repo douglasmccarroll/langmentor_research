@@ -1,0 +1,46 @@
+type Organization @model {
+  id: ID!
+  name: String!
+  groups: [Group] @connection(keyName: "byOrganization", fields: ["id"])
+  createdDate: AWSDateTime!
+}
+
+type Group
+  @model
+  @key(name: "byOrganization", fields: ["organizationID", "name"])
+{
+  id: ID!
+  organizationID: ID!
+  name: String!
+  organization: Organization @connection(fields: ["organizationID"])
+  users: [User] @connection(keyName: "byGroup", fields: ["id"])
+  createdDate: AWSDateTime!
+}
+
+type User
+  @model
+  @key(name: "byGroup", fields: ["groupID", "userName"])
+{
+  id: ID!
+  groupID: ID!
+  userName: String!
+  firstName: String!
+  lastName: String!
+  fullName: String!
+  emailAddress: String!
+  phoneNumber: String
+  group: Group @connection(fields: ["groupID"])
+  actions: [Action] @connection(keyName: "byUser", fields: ["id"])
+  createdDate: AWSDateTime!
+}
+
+type Action
+  @model
+  @key(name: "byUser", fields: ["userID", "dateTime"])
+{
+  id: ID!
+  userID: ID!
+  details: AWSJSON!
+  dateTime: AWSDateTime!
+}
+

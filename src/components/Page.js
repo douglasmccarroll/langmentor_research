@@ -7,11 +7,10 @@ import "../css/style.styl";
 
 const styles = {
   container: {
-    marginTop: 94,
+    marginTop: 15,
   },
   contentBox: {
-    maxWidth: "calc(1136px - 60px)",
-    width: "calc(100% - 60px)",
+    width: "96%",
   },
   title: {
     textAlign: "center"

@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+import * as PropTypes from "prop-types";
 import Chip from "@material-ui/core/Chip";
 import Grid from "@material-ui/core/Grid";
 import Avatar from "@material-ui/core/Avatar";

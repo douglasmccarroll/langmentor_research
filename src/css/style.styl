@@ -26,3 +26,14 @@ body
 
   footer
     text-align center
+
+
+// These are needed because material-table's rowHeight option doesn't work below 49px
+// https://github.com/mbrn/material-table/issues/701
+.MuiTableCell-root 
+  height: 10px !important
+  padding: 5px !important
+  font-size: 0.7rem !important
+.MuiButtonBase-root
+  height: 10px !important
+

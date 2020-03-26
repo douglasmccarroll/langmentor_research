@@ -5,6 +5,7 @@ public/
 yarn-error.log
 yarn.lock
 .idea/
+.vscode/
 
 #amplify
 amplify/\#current-cloud-backend
@@ -20,4 +21,4 @@ awsconfiguration.json
 amplifyconfiguration.json
 amplify-gradle-config.json
 amplifyxc.config
-
+amplify/team-provider-info.json

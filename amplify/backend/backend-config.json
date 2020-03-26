@@ -1,9 +1,26 @@
 {
 	"auth": {
-		"langmentorresearchb3134c88": {
+		"langmentorresearchc54a2b36": {
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation",
 			"dependsOn": []
+		}
+	},
+	"api": {
+		"langmentorresearch": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"authConfig": {
+					"additionalAuthenticationProviders": [],
+					"defaultAuthentication": {
+						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
+						"userPoolConfig": {
+							"userPoolId": "authlangmentorresearchc54a2b36"
+						}
+					}
+				}
+			}
 		}
 	}
 }

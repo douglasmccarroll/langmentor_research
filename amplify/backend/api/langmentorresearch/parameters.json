@@ -1,0 +1,11 @@
+{
+    "AppSyncApiName": "langmentorresearch",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": "false",
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authlangmentorresearchc54a2b36",
+            "Outputs.UserPoolId"
+        ]
+    }
+}
