@@ -1,5 +1,4 @@
 // See https://github.com/mui-org/material-ui/tree/master/examples/gatsby
-import './installMuiStyles';
 import React from "react";
 import { StylesProvider, ThemeProvider } from "@material-ui/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -29,9 +28,7 @@ function withRoot(Component) {
         >
           {/* ThemeProvider makes the theme available down the React
           tree thanks to React context. */}
-          <ThemeProvider
-            theme={this.muiPageContext.theme}
-          >
+          <ThemeProvider theme={this.muiPageContext.theme}>
             {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
             <CssBaseline />
             <Hidden implementation="css">

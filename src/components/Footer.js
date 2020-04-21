@@ -3,7 +3,7 @@ import { StaticQuery, graphql } from "gatsby";
 import Divider from "@material-ui/core/Divider";
 import Typography from "@material-ui/core/Typography";
 import Hidden from "@material-ui/core/Hidden";
-import withStyles from '@material-ui/styles/withStyles';
+import withStyles from "@material-ui/styles/withStyles";
 
 const styles = theme => ({
   divider: {
@@ -12,11 +12,11 @@ const styles = theme => ({
   },
   footer: {
     marginBottom: theme.spacing(1),
-    whiteSpace: 'nowrap',
+    whiteSpace: "nowrap",
   }
 });
 
-const Footer = withStyles(styles)(props => {
+const Footer = withStyles(styles)((props) => {
   const {
     classes,
     data: {
@@ -28,16 +28,12 @@ const Footer = withStyles(styles)(props => {
       },
     },
   } = props;
-  //console.log(typeof(data));
   return (
     <>
       <Divider className={classes.divider} />
-      <footer
-        className={classes.footer}
-        id="footer"
-      >
+      <footer className={classes.footer} id="footer">
         <span>
-          <Typography variant="caption" component="span">
+          <Typography component="span" variant="caption">
             ©{new Date().getFullYear()} {title}{" "}
             <Hidden only={["xs", "sm"]}>–</Hidden>
             <Hidden only={["xl", "lg", "md"]}>
@@ -53,7 +49,7 @@ const Footer = withStyles(styles)(props => {
   );
 });
 
-export default props => (
+export default () => (
   <StaticQuery
     query={graphql`
       query {
@@ -68,6 +64,6 @@ export default props => (
         }
       }
     `}
-    render={data => <Footer data={data} />}
+    render={(data) => <Footer data={data} />}
   />
 );

@@ -17,38 +17,28 @@ const styles = {
   }
 };
 
-class Page extends React.Component {
-  render() {
-    const { classes, title, children } = this.props;
-    return (
-      <>
-        <Header />
-        <Grid
-          className={classes.container}
-          container
-          direction="row"
-          justify="center"
-        >
-          <Grid
-            className={classes.contentBox}
-            item
-          >
-            {title ? (
-              <Typography
-                className={classes.title}
-                variant="h2"
-                gutterBottom
-              >
-                {title}
-              </Typography>
-            ) : null}
-            {children}
-            <Footer />
-          </Grid>
+const Component = ({ children, classes, title }) => {
+  return (
+    <>
+      <Header />
+      <Grid
+        className={classes.container}
+        container
+        direction="row"
+        justify="center"
+      >
+        <Grid className={classes.contentBox} item>
+          {title ? (
+            <Typography className={classes.title} gutterBottom variant="h2">
+              {title}
+            </Typography>
+          ) : null}
+          {children}
+          <Footer />
         </Grid>
-      </>
-    );
-  }
-}
+      </Grid>
+    </>
+  );
+};
 
-export default withStyles(styles)(Page);
+export default withStyles(styles)(Component);

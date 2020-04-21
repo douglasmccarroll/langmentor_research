@@ -40,8 +40,11 @@
     "typography": "^0.16.19"
   },
   "devDependencies": {
-    "prettier": "^1.19.1",
-    "redux-devtools": "^3.5.0"
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^3.0.0",
+    "prettier": "^2.0.4"
   },
   "keywords": [
     "gatsby"

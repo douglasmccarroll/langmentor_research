@@ -12,36 +12,30 @@ import Chip from "@material-ui/core/Chip";
 import Avatar from "@material-ui/core/Avatar";
 import { Flare as AvatarIcon } from "mdi-material-ui";
 
-const Header = props => {
+const Header = (props) => {
   return (
     <AppBar id="appBar">
       <Toolbar>
-        <Grid
-          container
-          justify="space-between"
-          alignItems="center"
-          spacing={10}
-        >
+        <Grid alignItems="center" container justify="space-between" spacing={10}>
           <Grid item>
             <Chip
+              avatar={
+                <Avatar id="logoIcon">
+                  <AvatarIcon />
+                </Avatar>
+              }
               id="logo"
-              variant="outlined"
-              avatar={<Avatar id="logoIcon">
-                <AvatarIcon />
-              </Avatar>}
               label={
                 <Link to="/">
                   {props.data.site.siteMetadata.title.toUpperCase()}
                 </Link>
               }
+              variant="outlined"
             />
           </Grid>
           <Grid item>
             <Hidden smDown>
-              <Typography
-                component="span"
-                variant="caption"
-              >
+              <Typography component="span" variant="caption">
                 <Menu />
               </Typography>
             </Hidden>
@@ -56,7 +50,7 @@ const Header = props => {
   );
 };
 
-export default props => (
+export default () => (
   <StaticQuery
     query={graphql`
       query {
@@ -71,6 +65,6 @@ export default props => (
         }
       }
     `}
-    render={data => <Header data={data} />}
+    render={(data) => <Header data={data} />}
   />
 );
