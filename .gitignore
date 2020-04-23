@@ -5,7 +5,6 @@ public/
 yarn-error.log
 yarn.lock
 .idea/
-.vscode/
 
 #amplify
 amplify/\#current-cloud-backend
